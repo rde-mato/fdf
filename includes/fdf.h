@@ -32,21 +32,36 @@
 # define C7         0x00000055
 # define C8         0x000000AA
 
-# define ESC        53
-# define UP         126
-# define DOWN       125
-# define RIGHT      124
-# define LEFT       123
-# define PLUS       24
-# define MINU       27
-# define PUP        116
-# define PDN        121
-# define SPACE      49
-# define TSB        46
+#ifdef linux
+	# include "/usr/include/X11/keysymdef.h"
+	# define ESC        0xff1b
+	# define UP         0xff52
+	# define DOWN       0xff54
+	# define RIGHT      0xff53
+	# define LEFT       0xff51
+	# define PLUS       0x0070
+	# define MINU       0x0069
+	# define PUP        0xff55
+	# define PDN        0xff56
+	# define SPACE      0x0072
+	# define TSB        0x006d
+#else
+	# define ESC        53
+	# define UP         126
+	# define DOWN       125
+	# define RIGHT      124
+	# define LEFT       123
+	# define PLUS       24
+	# define MINU       27
+	# define PUP        116
+	# define PDN        121
+	# define SPACE      49
+	# define TSB        46
+#endif
 
 # define NAME       "Feel Da Fap"
-# define WI         1920
-# define HE         1080
+# define WI         1024
+# define HE         768
 
 # define POSXA      WI / 20
 # define POSYA      HE - HE / 10

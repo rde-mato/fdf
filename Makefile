@@ -24,8 +24,8 @@ SRC = 	srcs/bonus.c \
 CC =			gcc
 CFLAGS =		-Wall -Werror -Wextra
 COPT =			-c -I ./includes
-LIBFTFLAGS =	-L ./libft -lft
-MLXFLAGS =		-lmlx -framework OpenGL -framework AppKit
+LIBFTFLAGS =	-L ./libft -L ./minilibx -lm -lft -lXext -lX11
+MLXFLAGS =		-lmlx #-framework OpenGL -framework AppKit
 RM =			/bin/rm -f
 
 all: $(NAME)
